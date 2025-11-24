@@ -1,23 +1,37 @@
-📰 Fake News Detection & Credibility Analyzer
+# 📰 Fake News Detection & Credibility Analyzer
 
-A lightweight project that detects whether a news article/headline is Fake or Real, built using Sentence-BERT embeddings, Logistic Regression, LIME explainability, and a Streamlit web app.
-Created as part of the GroundTruth AI Internship/Fellowship application.
+<p align="center">
+  <img src="analysis.png" width="700">
+</p>
 
-🚀 Features
+A lightweight ML project that identifies whether a news headline/article is **Fake** or **Real** using **SBERT embeddings**, **Logistic Regression**, **LIME explainability**, and a clean **Streamlit web app**.
 
-SBERT (all-MiniLM-L6-v2) embeddings
+Built as part of the **GroundTruth AI Internship/Fellowship** application.
 
-Logistic Regression classifier (Accuracy ~96%)
+---
 
-Credibility score (0–100)
+# 🚀 Features
 
-LIME explainability → highlights words influencing predictions
+* **SBERT (all-MiniLM-L6-v2)** for 384-dimensional sentence embeddings
+* **Logistic Regression classifier** (~96% accuracy)
+* **Credibility score (0–100)**
+* **LIME explainability** with highlighted influential words
+* **Streamlit UI** for instant predictions
+* **Reproducible training notebook**
 
-Streamlit app for real-time results
+---
 
-Fully reproducible notebook + clean project structure
+# 🖥️ Streamlit App Preview
 
-📂 Project Structure
+<p align="center">
+  <img src="Screenshot%202025-11-23%20191509.png" width="700">
+</p>
+
+---
+
+# 📂 Project Structure
+
+```
 fake-news-detector/
 ├── models/
 │   ├── classifier.joblib
@@ -26,67 +40,100 @@ fake-news-detector/
 │   └── app_streamlit.py
 ├── notebooks/
 │   └── training_pipeline.ipynb
-├── requirements.txt
-└── README.md
+├── LIME Results.png
+├── analysis.png
+├── README.md
+└── requirements.txt
+```
 
-⚙️ Setup
-1. Create virtual environment
+---
 
-Windows
+# ⚙️ Setup
 
+### **1. Create Virtual Environment**
+
+**Windows**
+
+```
 python -m venv venv
 venv\Scripts\activate
+```
 
+**Mac/Linux**
 
-Mac/Linux
-
+```
 python3 -m venv venv
 source venv/bin/activate
+```
 
-2. Install dependencies
+### **2. Install dependencies**
+
+```
 pip install -r requirements.txt
+```
 
-3. Add model
+### **3. Add model**
 
 Place model file here:
 
+```
 models/classifier.joblib
+```
 
+(Optional SBERT model: `models/sbert_model/`, otherwise it auto-downloads.)
 
-(Optionally include sbert_model/, otherwise it auto-downloads.)
+### **4. Run the Streamlit App**
 
-4. Run Streamlit app
+```
 streamlit run src/app_streamlit.py
+```
 
-📊 Evaluation (Summary)
+---
 
-Accuracy: ~96%
+# 📊 Evaluation Summary
 
-Precision/Recall/F1: 95–97%
+* **Accuracy:** ~96%
+* **Precision/Recall/F1:** 95–97%
 
-Confusion matrix & LIME outputs available in the notebook.
+### **Confusion Matrix & Metrics**
 
-🧠 Technical Flow
+<p align="center">
+  <img src="analysis.png" width="650">
+</p>
 
-Text cleaning
+---
 
-SBERT embedding (384-dim)
+# 🟩 LIME Explainability Example
 
-Logistic Regression classifier
+<p align="center">
+  <img src="LIME%20Results.png" width="700">
+</p>
 
-LIMETextExplainer for interpretability
+---
 
-Streamlit UI for predictions
+# 🧠 Technical Flow
 
-🗂 Dataset
+1. Text preprocessing
+2. SBERT embedding generation (384-dim)
+3. Logistic Regression classification
+4. LIMETextExplainer interpretability
+5. Streamlit frontend
 
-ISOT Fake/Real News Dataset
-https://www.kaggle.com/datasets/thought19/fake-news-detector
+---
 
-📜 License
+# 🗂 Dataset
 
-MIT License.
+**ISOT Fake/Real News Dataset**
+[https://www.kaggle.com/datasets/thought19/fake-news-detector](https://www.kaggle.com/datasets/thought19/fake-news-detector)
 
-🙋 Author
+---
 
-Aryan Singh
+# 📜 License
+
+MIT License
+
+---
+
+# 🙋 Author
+
+**Aryan Singh**
